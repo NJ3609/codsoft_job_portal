@@ -2,12 +2,12 @@
   "name": "job-portal-monorepo",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
-    "install-backend": "cd backend && npm install",
-    "install-frontend": "cd frontend && npm install",
-    "install-all": "npm run install-backend && npm run install-frontend",
-    "build-frontend": "cd frontend && npm run build",
-    "build": "npm run install-all && npm run build-frontend",
-    "start": "cd backend && npm start"
+    "build": "npm run build --workspace=frontend",
+    "start": "npm start --workspace=backend"
   }
 }
