@@ -9,5 +9,8 @@
   "scripts": {
     "build": "npm run build --workspace=frontend",
     "start": "npm start --workspace=backend"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
