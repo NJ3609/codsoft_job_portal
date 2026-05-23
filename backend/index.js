@@ -642,7 +642,7 @@ app.patch('/api/applications/:id/status', authenticateToken, authorizeEmployer, 
 
 // Wildcard fallback: Serve index.html for all non-API paths to support React Router refresh
 if (fs.existsSync(frontendDistDir)) {
-  app.get('*', (req, res) => {
+  app.get('/*splat', (req, res) => {
     if (!req.path.startsWith('/api') && !req.path.startsWith('/uploads')) {
       res.sendFile(path.join(frontendDistDir, 'index.html'));
     }
